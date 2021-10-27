@@ -33,6 +33,7 @@ class Auto:
                     estado = True
                 else:
                     estado = False
+                    break
             if estado:
                 print("Auto original")
             else:
