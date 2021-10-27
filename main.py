@@ -25,3 +25,26 @@ class Auto:
                 total_Asientos = total_Asientos + 1
         return total_Asientos
     
+    def verificarIntegridad(self):
+        estado = True
+        if self.motor.registro == self.registro:
+            for j in self.asientos:
+                if (not (isinstance (j, Asiento) and j.registro == self.registro)):
+                    estado = False
+            if estado:
+                print("Auto original")
+            else:
+                print("Las piezas no son originales")
+
+class Motor:
+    def __init__ (self, numeroCilindros, tipo, regitro):
+        self.numeroCilindros = numeroCilindros
+        self.tipo = tipo
+        self.registro = regitro
+    
+    def cambiarRegistro (self, r):
+        self.registro = r
+    
+    def asignarTipo(self, tipo):
+        if tipo =="normal" or tipo == "electrico":
+            self.tipo = tipo
