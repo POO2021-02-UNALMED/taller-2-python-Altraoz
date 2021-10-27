@@ -29,7 +29,9 @@ class Auto:
         estado = True
         if self.motor.registro == self.registro:
             for j in self.asientos:
-                if (not (isinstance (j, Asiento) and j.registro == self.registro)):
+                if (isinstance (j, Asiento) and j.registro == self.registro):
+                    estado = True
+                else:
                     estado = False
             if estado:
                 print("Auto original")
